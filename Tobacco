@@ -1,0 +1,30 @@
+//This is a tobacco age test. It takes in the age of the user and determines if they are old enough to smoke tobacco
+//Finally, it prompts them to answer if they want to retake the test or not.
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int year, a_legit, t_legit;
+    const TOBACCO_TEST = 1995
+    char ans;
+    do
+    {
+        cout<<" Enter your birth year and press Enter.\n ";
+        cin>>year;
+        a_legit = 2015 - year;
+        t_legit = 2015 - year;
+        if (a_legit >= 21) && (t_legit >= 18)
+            cout<<"You are old enough to purchase tobacco and alcohol.\n";
+
+        else
+        {
+            cout<<"Either You are not old enough to purchase tobacco or alcohol. Sorry!";
+            cout<<"We aren't sure which you can purchase yet. Stay tuned.";
+        }
+        
+        cout<<"do you want to do another tobacco test?";
+        cin>>ans;
+    }while((ans!='n') ||(ans!='N'));
+    return 0;
+}
