@@ -1,28 +1,62 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+//This program takes a line of strings and then deletes avery repeation. Furthermore, it creates a hole in every 
+//repetition and sends that hole to the end of the string. It finally gradually reduces the size of the string.
 
-# Precompiled Headers
-*.gch
-*.pch
+#include <iostream>
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+using namespace std;
 
-# Fortran module files
-*.mod
+void delete_repeats(char array[],int  num);    //deletes repeated characters
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+int main()
 
-# Executables
-*.exe
-*.out
-*.app
+{
+
+int i;
+
+const int MAX = 10;
+
+char characters[MAX]={'a'};
+
+for(i=0; i<MAX; i++)
+
+  cout << characters[i];        cout << " " << endl;
+
+delete_repeats(characters, MAX);
+
+for(i=0; i<MAX; i++)
+
+  cout << characters[i] << endl;       
+
+cout << " " << endl;
+
+return 0;
+
+}
+
+void delete_repeats(char array[], int num)
+
+{
+
+int a, b;
+
+for(a=0; a<num; a++)
+
+  for(b=0; b<num; b++)          
+
+     if (b != a)
+
+    {
+
+      if (array[a]==array[b])     //checks if a character is repeated
+
+      {
+
+        array[b] = array[b+1];   //replaces repeated with next character
+
+        array[b+1] = 0;          //moves all up.
+
+      }
+
+    }
+
+}
