@@ -1,0 +1,38 @@
+//THis simple program reads in DVD prices from a file and, outputs the sum of all the prices, 
+//calculates the average of the prices , otputs the average to the , and saves it to an output file. 
+
+#include<iostream>
+#include<iomanip>
+#include<fstream>
+using namespace std;
+void calcave(ifstream& boy, ofstream& girl);
+//calcultes average from input
+
+int main()
+{
+    int next, tsum=0, num=0;
+    ofstream nuw;
+    ifstream old;
+    old.open("dvd.txt");
+    nuw.open("ave.txt");
+    while(old>>next)
+    {
+        tsum+=next;
+        num+=1;
+        next=0;
+    }
+    cout<<tsum<<"\n";
+    cout<<num<<"\n";
+    cout<<(tsum/num)<<"\n";
+    char a= toupper('a');
+    cout<<a;
+    nuw.setf(ios::showpos);
+    nuw<<tsum<<"\n";
+    nuw<<num<<"\n";
+    nuw<<(tsum/num);
+    nuw<<toupper('a');
+    old.close();
+    nuw.close();
+    cout<<"end of file";
+}
+
