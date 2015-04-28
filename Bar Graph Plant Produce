@@ -1,0 +1,50 @@
+//THis program gives a bar chart of the productivity in a in a manufacturing firm.
+//THe various production numbers are entered and processed to output a barchart to the screen.
+
+#include<iostream>
+using namespace std;
+
+void input(int produce[], int size);
+void scale(int produce[], int size);
+void graph(int produce[], int size);
+
+int main()
+{
+    int product[8], size=8;
+    input(product, size);
+    scale(product, size);
+    graph(product, size);
+    return 0;
+    
+}
+
+void input(int produce[], int size)
+{
+    int product;
+    cout<<"enter produce (int thousands)\n";
+    for(int i=0;i<size;i++)
+    {
+        cin>>product;
+        produce[i]=product;
+    }
+}
+
+void scale(int produce[], int size)
+{
+    for (int i=0;i<size;i++)
+    {
+        produce[i] /= 1000;
+    }
+}
+
+void graph(int produce[], int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<produce[i];j++)
+        {
+            cout<<"*";
+        }
+        cout<<endl;
+    }
+}
