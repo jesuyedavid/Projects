@@ -1,0 +1,35 @@
+//This program reads in numbers from a file and outputs to the screen the maximum and minimum values.
+#include<iostream>
+#include<fstream>
+using namespace std;
+
+int mani()
+{
+    fstream fin;
+    fin.open("alycia.txt");
+    int next, max, min;
+    while(fin>>next)
+    {
+        if (next>max)
+        {
+            max=next;
+        }
+    }
+    cout<<max;
+    cout<<endl;
+    fin.close();
+    ifstream sfin;
+    sfin.open("alycia.txt");
+    while(sfin>>next)
+    {
+        if(next<min)
+        {
+            min=next;
+        }
+    }
+    cout<<min;
+    cout<<endl;
+    sfin.close();
+    
+    return 0;
+ 
