@@ -1,0 +1,23 @@
+//This program solves quadratic equations. It takes in three input constants and find the roots of the equation.
+
+#include<iostream>
+#include<cmath>
+#include<math.h>
+using namespace std;
+int main()
+{
+    double a,b,c,g,h,i; //declaring all required integers
+    double x1,x2;    //declaring all doubles
+    cout<<"after inputing each constant, press enter\n"; //command prompt
+    cin>>a>>b>>c;
+    g = pow(b,2);
+    h = (4*a*c);
+    i = (2*a);
+    x1 = ((-1*b) + pow((g-h),0.5))/(static_cast<double>(i));   //quadratic almighty formular.
+
+    x2 = ((-1*b) - pow((g-h),0.5))/(static_cast<double>(i)); //type casting so that x2 is a double.
+    cout<<"x1 is: "<<x1<<"\n";     //outputs first root of the equation
+    cout<<"x2 is: "<<x2<<"\n";   //outputs second root of the equation
+
+    return 0;   //end of program
+}
